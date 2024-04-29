@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" type="module" defer></script>
+  </head>
+  <body>
+    <h2>Food Menu</h2>
+
+    <nav class="navigation">
+      <div>
+        <input type="radio" name="All" class="select-radio" id="select-all" checked />
+        <label for="select-all">All</label>
+      </div>
+      <div>
+        <input type="radio" name="All" class="select-radio" id="select-plate" />
+        <label for="select-plate">Plate</label>
+      </div>
+      <div>
+        <input type="radio" name="All" class="select-radio" id="select-spaghetti" />
+        <label for="select-spaghetti">Spaghetti</label>
+      </div>
+      <div>
+        <input type="radio" name="All" class="select-radio" id="select-risotto" />
+        <label for="select-risotto">Risotto</label>
+      </div>
+      <div>
+        <input type="radio" name="All" class="select-radio" id="select-pizza" />
+        <label for="select-pizza">Pizza</label>
+      </div>
+    </nav>
+
+    <main>
+      <dl class="menu-list">
+        <div class="menu-item">
+          <dt class="menu-title"></dt>
+          <dd class="menu-img">
+            <img src="/" alt="" class="menu-img" />
+          </dd>
+          <dd class="menu-description"></dd>
+          <dd class="menu-price"></dd>
+        </div>
+      </dl>
+    </main>
+  </body>
+</html>
