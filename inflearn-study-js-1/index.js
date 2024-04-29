@@ -15,13 +15,14 @@ const setImageAttributes = (imageElement, src, altText) => {
 
 const getContent = ({ name, imgUrl, description, price }) => {
   const content = menuItem.cloneNode(true);
-  const [titleElement, imgContainer, descriptionElement, priceElement] =
-    content.children;
+  const [imgElement, textContainer] = content.children;
+  const [titleElement, priceElement, descriptionElement] =
+    textContainer.children;
 
   setElementContent(titleElement, name);
-  setImageAttributes(imgContainer.firstElementChild, imgUrl, `${name} 이미지`);
-  setElementContent(descriptionElement, description);
+  setImageAttributes(imgElement, imgUrl, `${name} 이미지`);
   setElementContent(priceElement, `${price}원`);
+  setElementContent(descriptionElement, description);
 
   return content;
 };
@@ -34,7 +35,8 @@ const renderMenuList = menu => {
 
 const getRenderData = e => {
   const filter = e.target.id.replace('select-', '');
-  const renderData = filter === 'all' ? data : data.filter(item => item.type === filter);
+  const renderData =
+    filter === 'all' ? data : data.filter(item => item.type === filter);
 
   return renderData;
 };

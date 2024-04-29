@@ -1,0 +1,89 @@
+body {
+  padding: 16px 32px;
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 40px;
+  padding: 0 20px;
+  border-bottom: gray solid 1px;
+  margin: 24px auto;
+  width: fit-content;
+}
+
+.navigation {
+  display: flex;
+  margin: 32px;
+  justify-content: center;
+  gap: 24px;
+}
+
+label {
+  border: 1px gray solid;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+label:hover {
+  cursor: pointer;
+  border-color: red;
+}
+
+input[type='radio']:checked + label {
+  border: 2px red solid;
+  font-weight: bold;
+}
+
+.a11yhidden {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  clip-path: circle(0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.menu-list {
+  display: grid;
+  padding: 0;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.text-container {
+  width: 100%;
+}
+
+.menu-item {
+  display: flex;
+  gap: 4%;
+  margin: 16px;
+  height: 160px;
+}
+
+.menu-title {
+  display: inline;
+  margin: 0;
+}
+
+.menu-price {
+  margin: 2px;
+  float: right;
+}
+
+.menu-img {
+  border-radius: 16px;
+}
+
+.menu-description {
+  border-top: gray 1px solid;
+  margin-top: 10px;
+  padding-top: 10px;
+  font-size: 0.875rem;
+  font-weight: light;
+}
