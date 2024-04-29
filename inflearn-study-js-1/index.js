@@ -32,5 +32,15 @@ const renderMenuList = menu => {
   menuList.replaceChildren(...renderList);
 };
 
+const getRenderData = e => {
+  const filter = e.target.id.replace('select-', '');
+  const renderData = filter === 'all' ? data : data.filter(item => item.type === filter);
+
+  return renderData;
+};
+
+navigation.addEventListener('change', e => {
+  renderMenuList(getRenderData(e));
+});
 
 renderMenuList(data);
