@@ -12,38 +12,36 @@ const characters = {
 };
 
 const getRandomCharacters = () => {
-  let randomCharacters = '';
-
-  options.forEach(option => {
+  return Array.from(options).reduce((acc, option) => {
     if (option.checked) {
-      randomCharacters += characters[option.id];
+      acc += characters[option.id];
     }
-  });
-
-  return randomCharacters;
+    return acc;
+  }, '');
 };
 
 const generatePassword = () => {
-  const length = lengthInput.value;
-  const password = [];
   const randomCharacters = getRandomCharacters();
+  const length = lengthInput.value;
+  let password = '';
 
   for (let i = 0; i < length; i += 1) {
-    const randomChar = Math.floor(Math.random() * randomCharacters.length);
+    const randomIndex = Math.floor(Math.random() * randomCharacters.length);
 
-    password.push(randomCharacters[randomChar]);
+    password += randomCharacters[randomIndex];
   }
 
-  passwordInput.value = password.join('');
+  passwordInput.value = password;
 };
 
 const copyPassword = () => {
-  if (passwordInput.value) {
-    navigator.clipboard.writeText(passwordInput.value);
-    alert('복사되었습니다.');
+  const password = passwordInput.value;
 
+  if (password) {
+    navigator.clipboard.writeText(passwordInput.value);
     copyButton.innerText = 'check';
     copyButton.style.color = '#4285f4';
+    alert('복사되었습니다.');
 
     setTimeout(() => {
       copyButton.innerText = 'copy_all';
