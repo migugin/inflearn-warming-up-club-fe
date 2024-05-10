@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1.4px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 60%;
+  background: #fff;
+  border-radius: 8px;
+  border: solid gray 1px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 5%;
+  margin-top: 28px;
+  margin-bottom: 40px;
+}
+
+.password-box {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 12px 16px;
+}
+
+.password-box input {
+  color: #000;
+  background: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  flex-grow: 1;
+}
+
+.password-box span {
+  cursor: pointer;
+  color: #707070;
+}
+
+.password-box span:hover {
+  color: green !important;
+}
+
+.input-length {
+  position: relative;
+}
+
+.input-length label {
+  font-size: 0.875rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  padding: 0 4px;
+  margin-left: 10px;
+  transform: translateY(-50%);
+}
+
+.input-length input {
+  width: 100%;
+  padding: 16px 16px 10px;
+  font-size: 1rem;
+}
+
+.options {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.option {
+  font-size: 1.125rem;
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+}
+
+.generate-button {
+  background-color: #fff;
+  color: #000;
+  padding: 10px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #000;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.generate-button:hover {
+  background-color: #000;
+  color: #fff;
+}

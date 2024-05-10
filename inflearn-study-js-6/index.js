@@ -29,8 +29,9 @@ const generatePassword = () => {
   const randomCharacters = getRandomCharacters();
 
   for (let i = 0; i < length; i += 1) {
-    const random = Math.floor(Math.random() * randomCharacters.length);
-    password.push(randomCharacters[random]);
+    const randomChar = Math.floor(Math.random() * randomCharacters.length);
+
+    password.push(randomCharacters[randomChar]);
   }
 
   passwordInput.value = password.join('');
@@ -39,7 +40,8 @@ const generatePassword = () => {
 const copyPassword = () => {
   if (passwordInput.value) {
     navigator.clipboard.writeText(passwordInput.value);
-    alert('복사하였습니다.');
+    alert('복사되었습니다.');
+
     copyButton.innerText = 'check';
     copyButton.style.color = '#4285f4';
 
