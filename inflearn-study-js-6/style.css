@@ -84,6 +84,18 @@ h2 {
   font-size: 1rem;
 }
 
+.info {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+.info span {
+  font-size: 1rem;
+}
+
 .options {
   margin-top: 12px;
   display: flex;
