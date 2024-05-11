@@ -16,11 +16,16 @@ const getRandomCharacters = () => {
     if (option.checked) {
       acc += characters[option.id];
     }
+
     return acc;
   }, '');
 };
 
 const generatePassword = () => {
+  if (!validateConfig()) {
+    return;
+  }
+
   const randomCharacters = getRandomCharacters();
   const length = lengthInput.value;
   let password = '';
@@ -50,6 +55,25 @@ const copyPassword = () => {
   } else {
     alert('비밀번호를 먼저 생성해주세요.');
   }
+};
+
+const validateConfig = () => {
+  if (!lengthInput.value) {
+    alert('길이를 입력해주세요.');
+    return false;
+  }
+
+  if (lengthInput.value < 5 || lengthInput.value > 70) {
+    alert('길이는 5자 이상 70자 이하로 입력해주세요.');
+    return false;
+  }
+
+  if (Array.from(options).every(option => !option.checked)) {
+    alert('최소 한 개 이상의 옵션을 선택해주세요.');
+    return false;
+  }
+
+  return true;
 };
 
 generateButton.addEventListener('click', generatePassword);
